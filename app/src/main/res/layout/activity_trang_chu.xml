@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+    android:background="#ffffff"
+tools:context=".TrangChuActivity">
+<androidx.drawerlayout.widget.DrawerLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:id="@+id/drawerLayout_home">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#03A9F4"
+
+            android:id="@+id/toolbar_home">
+<!--            <TextView-->
+<!--                android:layout_width="200dp"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:text="nAM AN DB "-->
+<!--                android:gravity="center"-->
+<!--                android:textSize="16pt"-->
+<!--                android:textColor="#fff"/>-->
+        </androidx.appcompat.widget.Toolbar>
+           <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:src="@drawable/logo2"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="40dp">
+
+                <ImageView
+                    android:id="@+id/img_Qltk"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/cateicon"
+                    android:layout_marginLeft="40dp"/>
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:text="Quản Lý Tài Khoản"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="10dp"/>
+                <ImageView
+                    android:id="@+id/img_Qlhd"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/emone"
+                    android:layout_marginLeft="40dp"/>
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:text="Quản Lý Hóa Đơn"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="10dp"/>
+                <ImageView
+                    android:id="@+id/img_GT"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/thongke"
+                    android:layout_marginLeft="40dp"/>
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:text="Giới Thiệu"
+                    android:layout_marginLeft="65dp"
+                    android:layout_marginTop="10dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="40dp">
+                <ImageView
+                    android:id="@+id/img_Qls"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/cateicon"
+                    android:layout_marginLeft="20dp"/>
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:text="Quản Lý Sách"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="10dp"/>
+                <ImageView
+                    android:id="@+id/img_Qltl"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/emone"
+                    android:layout_marginLeft="20dp"/>
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:text="Quản Lý Thể Loại"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"/>
+                <ImageView
+                    android:id="@+id/img_Tk"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/thongke"
+                    android:layout_marginLeft="20dp"/>
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:text="Thống Kê"
+                    android:layout_marginLeft="55dp"
+                    android:layout_marginTop="10dp"/>
+            </LinearLayout>
+
+
+            "
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        android:id="@+id/navigationview_home">
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="277dp"
+                android:layout_height="170dp"
+                android:src="@drawable/logo2"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:text="namnhph11371@fpt.edu.vn"/>
+
+        </LinearLayout>
+
+        <ListView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ListView_home"
+            android:layout_marginTop="220dp"/>
+
+    </com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>
+
+</LinearLayout>
