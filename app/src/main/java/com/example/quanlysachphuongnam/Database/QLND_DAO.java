@@ -50,7 +50,7 @@ public class QLND_DAO {
         Cursor cursor = mySqlite.getWritableDatabase().rawQuery(truyVanND,null);
         if (cursor.getCount()>0){
             cursor.moveToFirst();
-            while (cursor.isAfterLast()==false){
+            while (!cursor.isAfterLast()==false){
                 String userName = cursor.getString(cursor.getColumnIndex("UserName"));
                 String pasWord = cursor.getString(cursor.getColumnIndex("PassWord"));
                 String HoTen = cursor.getString(cursor.getColumnIndex("HoTen"));

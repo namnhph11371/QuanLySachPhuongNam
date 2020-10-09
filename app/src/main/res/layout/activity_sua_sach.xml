@@ -4,151 +4,111 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".DangKyActivity">
-    <androidx.appcompat.widget.Toolbar
+    tools:context=".service.SuaSach"
+
+    android:orientation="vertical">
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#03A9F4"
-        >
-        <TextView
-            android:layout_width="290dp"
-            android:layout_height="70dp"
-            android:text="Quản Lý Sách"
-            android:textSize="15pt"
-            android:textColor="#FFF"
-            android:layout_gravity="center"
-            android:paddingLeft="40dp"
-            android:paddingTop="15dp"/>
-
-    </androidx.appcompat.widget.Toolbar>
-
+        android:text="Sửa Sách"
+        android:textSize="16pt"
+        android:gravity="center"/>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="60dp"
-        android:id="@+id/textInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/suasach_MaSach"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Mã Sách" />
+            android:hint="Nhập mã sách" />
     </com.google.android.material.textfield.TextInputLayout>
-
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/suasach_theloai"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Tên Sách" />
+            android:hint="nhập thể loại" />
     </com.google.android.material.textfield.TextInputLayout>
-
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/suasach_tensach"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Giá Bán" />
+            android:hint="nhập tên sách" />
     </com.google.android.material.textfield.TextInputLayout>
-
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/suasach_tacgia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Tác Giả" />
+            android:hint="nhập tác giả" />
     </com.google.android.material.textfield.TextInputLayout>
-
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/suasach_nhaxuatban"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nhà xuất Bản" />
+            android:hint="nhập nhà xuất bản" />
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/suasach_giaban"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Thể Loại" />
+            android:hint="nhập giá bán" />
     </com.google.android.material.textfield.TextInputLayout>
+
+
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/suasach_soluong"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Số Lượng" />
+            android:hint="nhập số lượng" />
     </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout10"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Thời Gian" />
-    </com.google.android.material.textfield.TextInputLayout>
-
     <LinearLayout
+        android:gravity="center"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
-            android:id="@+id/button_QLS_Them"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:layout_marginLeft="25dp"
-            android:text="Thêm" />
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:id="@+id/btn_suasach"
+            android:text="sửa sách"/>
         <Button
-            android:id="@+id/button_QLS_SUA"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:layout_marginLeft="10dp"
-            android:text="Sửa" />
-        <Button
-            android:id="@+id/button_QLS_Xoa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:layout_marginLeft="10dp"
-            android:text="Xóa" />
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:id="@+id/btn_huysuasach"
+            android:text="hủy"/>
 
 
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/button_QLS"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:layout_marginLeft="30dp"
-            android:text="Danh Sách QL Sách"/>
-    </LinearLayout>
+
+
+
+
 
 </LinearLayout>

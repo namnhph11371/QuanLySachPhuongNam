@@ -7,35 +7,33 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+        <TextView
+            android:id="@+id/recycle_QLND_hoten"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:height="50dp" />
 
         <TextView
             android:id="@+id/recycle_QLND_username"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:height="50dp" />
 
         <TextView
             android:id="@+id/recycle_QLND_password"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:height="50dp"/>
 
-        <TextView
-            android:id="@+id/recycle_QLND_hoten"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:height="50dp" />
 
         <TextView
             android:id="@+id/recycle_QLND_sodienthoai"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:height="50dp" />
+
     </LinearLayout>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_recycle_QLND"
-        android:visibility="visible"/>
+
+
 
 </LinearLayout>

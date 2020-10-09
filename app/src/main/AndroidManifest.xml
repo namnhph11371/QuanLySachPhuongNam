@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".service.XoaTheLoai"></activity>
+        <activity android:name=".service.SuaNguoiDung"></activity>
+        <activity android:name=".service.SuaSach" />
+        <activity android:name=".service.SuaHoaDon" />
+        <activity android:name=".service.XoaNguoiDung" />
+        <activity android:name=".service.XoaTheLoai" />
         <activity android:name=".service.XoaSach" />
         <activity android:name=".service.XoaHoaDon" />
         <activity android:name=".DangKyActivity" />

@@ -50,7 +50,7 @@ public class QLTL_DAO {
     // hàm lấy danh sách
     public List<TheLoai> getAll_QLTL(){
         List<TheLoai> theLoaiList = new ArrayList<>();
-        String  TruyVan_QLTL = "SELECT * FROM TheLoai";
+        String  TruyVan_QLTL = "SELECT * FROM QLTL";
         Cursor cursor = mySqlite.getWritableDatabase().rawQuery(TruyVan_QLTL,null);
         if (cursor.getCount()>0){
             cursor.moveToFirst();

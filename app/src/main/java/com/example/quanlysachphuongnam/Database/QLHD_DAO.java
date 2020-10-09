@@ -10,7 +10,7 @@ import com.example.quanlysachphuongnam.Model.TheLoai;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QLHD_DAO {
+public class QLHD_DAO  {
     private MySqlite mySqlite;
     public QLHD_DAO(MySqlite mySqlite){
         this.mySqlite = mySqlite;
@@ -22,6 +22,7 @@ public class QLHD_DAO {
         contentValues.put("MaHoaDon",hoaDon.getMaHoaDon());
         contentValues.put("NgayMua",hoaDon.getNgayMua());
         sqLiteDatabase.insert("QLHD",null,contentValues);
+
     }
     // hàm sửa
     public  void Update_QLHD(HoaDon hoaDon,String MaHoaDon){
@@ -44,11 +45,11 @@ public class QLHD_DAO {
     // hàm lấy danh sách
     public List<HoaDon> getAll_QLHD(){
         List<HoaDon> hoaDonList = new ArrayList<>();
-        String TruyVan_HD = "SELECT *FROM HOADON";
+        String TruyVan_HD = "SELECT *FROM QLHD";
         Cursor cursor = mySqlite.getWritableDatabase().rawQuery(TruyVan_HD,null);
         if (cursor.getCount()>0){
             cursor.moveToFirst();
-            while (cursor.isAfterLast()==false){
+            while (!cursor.isAfterLast()==false){
                 String Mahoadon = cursor.getString(cursor.getColumnIndex("MaHoaDon"));
                 String Ngaymua = cursor.getString(cursor.getColumnIndex("NgayMua"));
                 HoaDon hoaDon = new HoaDon();

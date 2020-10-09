@@ -52,27 +52,26 @@ public class Adapter_TheLoai extends RecyclerView.Adapter <Adapter_TheLoai.ViewH
         holder.txtTheLoai.setText("Thể loại"+theLoai.getTheLoai());
         holder.txtTacGia.setText("Tác Giả"+theLoai.getTacGia());
         holder.txtNhaXuatBan.setText("Nhà xuất bản"+theLoai.getNhaXuatBan());
-        holder.btnthem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-        holder.btnsua.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-        holder.btnxoa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+//        holder.btnthem.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
+//        holder.btnsua.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
+//        holder.btnxoa.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
 
     }
-
     @Override
     public int getItemCount() {
         return theLoaiList.size();

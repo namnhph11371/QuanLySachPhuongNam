@@ -11,10 +11,10 @@
         android:src="@drawable/ic_action_menu"
         android:id="@+id/imgicon"/>
     <TextView
+        android:text="Quản Lý sách"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txticon"
-        android:text="Quản Lý Sách"
+        android:id="@+id/txticon1"
         android:textSize="10pt"
         android:textColor="#000"
         android:paddingLeft="12dp"/>

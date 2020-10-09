@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:background="#03A9F4">
         <TextView
+            android:gravity="center"
             android:layout_width="170dp"
             android:layout_height="70dp"
             android:text="Đăng Ký"
@@ -22,39 +23,25 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <ImageView
-        android:id="@+id/img_Dangky"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        />
-
-    <Button
-        android:id="@+id/button_layanh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Chụp Ảnh"
-        android:layout_gravity="center"/>
-
-
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_hoten_nd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Họ Và Tên" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_username_nd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="UserName" />
@@ -63,60 +50,67 @@
     <com.google.android.material.textfield.TextInputLayout
         app:passwordToggleEnabled="true"
         app:counterMaxLength="20"
-        android:id="@+id/textInputLayout5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:maxLength="20"
+            android:id="@+id/edt_password_nd"
             android:inputType="textPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="PassWord" />
     </com.google.android.material.textfield.TextInputLayout>
 
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:inputType="number"-->
+<!--            android:id="@+id/edt_ngaysinh_nd"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Ngày Sinh" />-->
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:id="@+id/edt_email_nd"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Email" />-->
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout6"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ngày Sinh" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Email" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.textfield.TextInputEditText
+            android:inputType="number"
+            android:id="@+id/edt_sodienthoai_nd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Số Điện Thoại" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout9"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+<!--    <com.google.android.material.textfield.TextInputLayout-->
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Địa Chỉ" />
-    </com.google.android.material.textfield.TextInputLayout>
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:id="@+id/edt_diachi_nd"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Địa Chỉ" />-->
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
 
 
 
@@ -133,7 +127,7 @@
             android:text="Đăng Ký" />
 
         <Button
-            android:id="@+id/button_Thoat"
+            android:id="@+id/button_Thoat_dk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"

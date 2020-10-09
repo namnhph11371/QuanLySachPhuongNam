@@ -53,8 +53,6 @@ public class Adapter_HoaDon extends RecyclerView.Adapter<Adapter_HoaDon.ViewHold
          holder.txtMaHoaDon.setText("Mã Hóa Đơn:"+ hoaDon.getMaHoaDon());
          holder.txtNgayMua.setText("Ngày Mua:"+hoaDon.getNgayMua());
 
-
-
     }
 
     @Override

@@ -4,27 +4,19 @@ public class Sach {
     private  String MaSach;
     private  String MaTheLoai;
     private  String TenSach;
-    private  float GiaNhap;
-    private  String TieuDe;
     private  String TacGia;
     private  String NhaXuatban;
     private  float GiaBan;
-    private  int SoLuong;
+    private  float SoLuong;
 
-    public Sach(String maSach, String maTheLoai, String tenSach, float giaNhap, String tieuDe, String tacGia, String nhaXuatban, float giaBan, int soLuong) {
+    public Sach(String maSach, String maTheLoai, String tenSach, String tacGia, String nhaXuatban, float giaBan, float soLuong) {
         MaSach = maSach;
         MaTheLoai = maTheLoai;
         TenSach = tenSach;
-        GiaNhap = giaNhap;
-        TieuDe = tieuDe;
         TacGia = tacGia;
         NhaXuatban = nhaXuatban;
         GiaBan = giaBan;
         SoLuong = soLuong;
-    }
-
-    public Sach(String masach, String tensach, String giaban, String tacgia, String nhaxuatban, String theloai, String soluong) {
-
     }
 
     public Sach() {
@@ -55,22 +47,6 @@ public class Sach {
         TenSach = tenSach;
     }
 
-    public float getGiaNhap() {
-        return GiaNhap;
-    }
-
-    public void setGiaNhap(float giaNhap) {
-        GiaNhap = giaNhap;
-    }
-
-    public String getTieuDe() {
-        return TieuDe;
-    }
-
-    public void setTieuDe(String tieuDe) {
-        TieuDe = tieuDe;
-    }
-
     public String getTacGia() {
         return TacGia;
     }
@@ -95,11 +71,11 @@ public class Sach {
         GiaBan = giaBan;
     }
 
-    public int getSoLuong() {
+    public float getSoLuong() {
         return SoLuong;
     }
 
-    public void setSoLuong(int soLuong) {
+    public void setSoLuong(float soLuong) {
         SoLuong = soLuong;
     }
 }

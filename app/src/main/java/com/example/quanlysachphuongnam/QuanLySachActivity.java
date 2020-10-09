@@ -1,21 +1,14 @@
 package com.example.quanlysachphuongnam;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.Dialog;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.quanlysachphuongnam.Adapter.Adapter_Sach;
 import com.example.quanlysachphuongnam.Model.Sach;
@@ -25,55 +18,106 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QuanLySachActivity extends AppCompatActivity {
-    Button btnthem,btnsua,btnxoa,btnxemdanhsach,btnXoa,btnHuy;
+    Button btnthem, btnsua, btnxoa, btnXoa, btnHuy;
+    Button btnSuaSach, btnHuySach;
     RecyclerView recyclerView;
-    List<Sach>sachList;
+    List<Sach> sachList;
     Adapter_Sach adapter_sach;
-    TextInputEditText txt1,txt2,txt3,txt4,txt5,txt6,txt7;
-    EditText edt_xoa;
+    TextInputEditText txt1, txt2, txt3, txt4, txt5, txt6, txt7;
+    EditText edt_xoa, edt1, edt2, edt3, edt4, edt5, edt6, edt7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quan_ly_sach);
-       anhxa();
-       sachList = new ArrayList<>();
-       //danh sách ảo
-       adapter_sach = new Adapter_Sach(sachList,this,R.layout.recycle_sach);
-       recyclerView.setAdapter(adapter_sach);
-       btnthem.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               String masach = txt1.getText().toString().trim();
-               String tensach = txt2.getText().toString().trim();
-               String giaban = txt3.getText().toString().trim();
-               String tacgia = txt4.getText().toString().trim();
-               String nhaxuatban = txt5.getText().toString().trim();
-               String theloai = txt6.getText().toString().trim();
-               String soluong = txt7.getText().toString().trim();
-               sachList.add(new Sach(masach,tensach,giaban,tacgia,nhaxuatban,theloai,soluong));
-               adapter_sach.notifyDataSetChanged();
-           }
-       });
-       btnsua.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
+        anhxa();
+        sachList = new ArrayList<>();
+        //danh sách ảo
+        recyclerView = findViewById(R.id.RCV_Sach);
+        adapter_sach = new Adapter_Sach(sachList, this, R.layout.recycle_sach);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter_sach);
+        btnthem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String masach = txt1.getText().toString().trim();
+                String theloai = txt6.getText().toString().trim();
+                String tensach = txt2.getText().toString().trim();
+                String tacgia = txt4.getText().toString().trim();
+                String nhaxuatban = txt5.getText().toString().trim();
+                String giaban = txt3.getText().toString().trim();
+                String soluong = txt7.getText().toString().trim();
+                Sach sach = new Sach(masach, theloai, tensach, tacgia, nhaxuatban, Float.parseFloat(giaban), Float.parseFloat(soluong));
+                sachList.add(sach);
+                adapter_sach.notifyDataSetChanged();
+            }
+        });
+        btnsua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DiaLogSuaSach();
 
-           }
-       });
-       btnxoa.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-              DiaLogXoaSach();
+            }
+        });
+        btnxoa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DiaLogXoaSach();
 
-           }
-       });
-
+            }
+        });
 
 
     }
-    private  void DiaLogXoaSach(){
-        final  Dialog dialog = new Dialog(this);
+
+    // dialog sửa sách
+    public void DiaLogSuaSach() {
+        final Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.activity_sua_sach);
+        edt1 = dialog.findViewById(R.id.suasach_MaSach);
+        edt6 = dialog.findViewById(R.id.suasach_theloai);
+        edt2 = dialog.findViewById(R.id.suasach_tensach);
+        edt4 = dialog.findViewById(R.id.suasach_tacgia);
+        edt5 = dialog.findViewById(R.id.suasach_nhaxuatban);
+        edt3 = dialog.findViewById(R.id.suasach_giaban);
+        edt7 = dialog.findViewById(R.id.suasach_soluong);
+        btnSuaSach = dialog.findViewById(R.id.btn_suasach);
+        btnHuySach = dialog.findViewById(R.id.btn_huysuasach);
+        btnSuaSach.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String masach = edt1.getText().toString().trim();
+                String theloai = edt6.getText().toString().trim();
+                String tensach = edt2.getText().toString().trim();
+                String tacgia = edt4.getText().toString().trim();
+                String nhaxuatban = edt5.getText().toString().trim();
+                String giaban = edt3.getText().toString().trim();
+                String soluong = edt7.getText().toString().trim();
+                if (Adapter_Sach.position == -1) {
+                    dialog.cancel();
+                } else {
+                    sachList.remove(Adapter_Sach.position);
+                    sachList.add(Adapter_Sach.position, new Sach(masach, theloai, tensach, tacgia, nhaxuatban, Float.parseFloat(giaban), Float.parseFloat(soluong)));
+                    adapter_sach.notifyItemChanged(Adapter_Sach.position);
+                    Adapter_Sach.position = -1;
+                    dialog.cancel();
+                }
+
+            }
+        });
+        btnHuySach.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.cancel();
+            }
+        });
+
+        dialog.show();
+    }
+
+    // dialog xóa sách
+    private void DiaLogXoaSach() {
+        final Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.activity_xoa_sach);
         edt_xoa = dialog.findViewById(R.id.edt_xoasach);
         btnXoa = dialog.findViewById(R.id.btn_xoasach);
@@ -91,11 +135,13 @@ public class QuanLySachActivity extends AppCompatActivity {
                 dialog.cancel();
             }
         });
+        dialog.show();
 
     }
 
     private void anhxa() {
         txt1 = findViewById(R.id.textMaSach);
+
         txt2 = findViewById(R.id.textTenSach);
         txt3 = findViewById(R.id.textGiaBan);
         txt4 = findViewById(R.id.textTacGia);
@@ -107,9 +153,10 @@ public class QuanLySachActivity extends AppCompatActivity {
         btnxoa = findViewById(R.id.button_QLS_Xoa);
         recyclerView = findViewById(R.id.RCV_Sach);
     }
-    public  void xoasach(String id){
-        for (int i=0;i<sachList.size();i++){
-            if (id.equals(sachList.get(i).getMaSach())){
+
+    public void xoasach(String id) {
+        for (int i = 0; i < sachList.size(); i++) {
+            if (id.equals(sachList.get(i).getMaSach())) {
                 sachList.remove(i);
             }
         }
@@ -117,26 +164,5 @@ public class QuanLySachActivity extends AppCompatActivity {
     }
 
 
-//    // option menu
 //
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//       MenuInflater menuInflater = getMenuInflater();
-//       menuInflater.inflate(R.menu.item_sach,menu);
-//        return super.onCreateOptionsMenu(menu);
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        if (item.getItemId()==R.id.them){
-//            Toast.makeText(QuanLySachActivity.this,"Thêm thành công",Toast.LENGTH_LONG).show();
-//        }else  if (item.getItemId()==R.id.sua){
-//            Toast.makeText(QuanLySachActivity.this,"Sửa thành công",Toast.LENGTH_LONG).show();
-//
-//        }else  if (item.getItemId()==R.id.xoa){
-//            Toast.makeText(QuanLySachActivity.this,"Xóa thành công",Toast.LENGTH_LONG).show();
-//
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
 }

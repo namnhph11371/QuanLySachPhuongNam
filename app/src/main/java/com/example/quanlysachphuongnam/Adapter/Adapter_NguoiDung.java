@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.quanlysachphuongnam.DangKyActivity;
 import com.example.quanlysachphuongnam.Model.NguoiDung;
 import com.example.quanlysachphuongnam.R;
 
@@ -19,7 +20,14 @@ public class Adapter_NguoiDung extends RecyclerView.Adapter<Adapter_NguoiDung.Vi
     List<NguoiDung> nguoiDungList;
     Context context;
     int layout;
-    public  static  boolean flag = false;
+    public  static  int position = -1;
+
+    public Adapter_NguoiDung(List<NguoiDung> nguoiDungList, Context context, int layout) {
+        this.nguoiDungList = nguoiDungList;
+        this.context = context;
+        this.layout = layout;
+    }
+
     @NonNull
     @Override
     public Adapter_NguoiDung.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -31,10 +39,15 @@ public class Adapter_NguoiDung extends RecyclerView.Adapter<Adapter_NguoiDung.Vi
 
     @Override
     public void onBindViewHolder(@NonNull Adapter_NguoiDung.ViewHolder holder, int position) {
-        holder.username.setText(nguoiDungList.get(position).getUserName());
-        holder.password.setText(nguoiDungList.get(position).getPassWord());
-        holder.sodienthoai.setText(nguoiDungList.get(position).getSoDienThoai());
-        holder.hoten.setText(nguoiDungList.get(position).getHoTen());
+//        holder.username.setText(nguoiDungList.get(position).getUserName());
+//        holder.password.setText(nguoiDungList.get(position).getPassWord());
+//        holder.sodienthoai.setText(nguoiDungList.get(position).getSoDienThoai());
+//        holder.hoten.setText(nguoiDungList.get(position).getHoTen());
+        final  NguoiDung nguoiDung = nguoiDungList.get(position);
+        holder.hoten.setText("họ và tên:"+nguoiDung.getHoTen());
+        holder.username.setText("UserName:"+nguoiDung.getUserName());
+        holder.password.setText("PassWord:"+nguoiDung.getPassWord());
+        holder.sodienthoai.setText("Số điện Thoại:"+nguoiDung.getSoDienThoai());
 
     }
 
@@ -51,7 +64,7 @@ public class Adapter_NguoiDung extends RecyclerView.Adapter<Adapter_NguoiDung.Vi
             password = itemView.findViewById(R.id.recycle_QLND_password);
             sodienthoai = itemView.findViewById(R.id.recycle_QLND_sodienthoai);
             hoten = itemView.findViewById(R.id.recycle_QLND_hoten);
-            btn_QLND = itemView.findViewById(R.id.btn_recycle_QLND);
+           // btn_QLND = itemView.findViewById(R.id.btn_recycle_QLND);
         }
     }
 }

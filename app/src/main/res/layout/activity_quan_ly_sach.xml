@@ -19,15 +19,12 @@
             android:text="Quản lý sách"
             android:textSize="15pt"
             android:textColor="#FFF"
-            android:layout_gravity="center"
-            android:paddingLeft="40dp"
+            android:gravity="center"
+            android:layout_marginLeft="70dp"
+
             android:paddingTop="15dp"/>
 
     </androidx.appcompat.widget.Toolbar>
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:id="@+id/recycleLV_sach"/>-->
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -37,10 +34,22 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
+
             android:id="@+id/textMaSach"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Mã Sách" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textTheLoai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Thể Loại" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -54,19 +63,6 @@
             android:layout_height="wrap_content"
             android:hint="Tên Sách" />
     </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textGiaBan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Giá Bán" />
-    </com.google.android.material.textfield.TextInputLayout>
-
     <com.google.android.material.textfield.TextInputLayout
 
         android:layout_width="match_parent"
@@ -78,7 +74,6 @@
             android:layout_height="wrap_content"
             android:hint="Tác Giả" />
     </com.google.android.material.textfield.TextInputLayout>
-
     <com.google.android.material.textfield.TextInputLayout
 
         android:layout_width="match_parent"
@@ -90,16 +85,18 @@
             android:layout_height="wrap_content"
             android:hint="Nhà xuất Bản" />
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textTheLoai"
+            android:inputType="number"
+            android:id="@+id/textGiaBan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Thể Loại" />
+            android:hint="Giá Bán" />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
 
@@ -107,23 +104,16 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:inputType="number"
             android:id="@+id/textSoLuong"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Số Lượng" />
     </com.google.android.material.textfield.TextInputLayout>
-<!--    <com.google.android.material.textfield.TextInputLayout-->
-<!--        android:id="@+id/textInputLayout10"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content">-->
 
-<!--        <com.google.android.material.textfield.TextInputEditText-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:hint="Thời Gian" />-->
-<!--    </com.google.android.material.textfield.TextInputLayout>-->
 
     <LinearLayout
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -132,37 +122,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
-            android:layout_marginLeft="25dp"
+
             android:text="Thêm" />
         <Button
             android:id="@+id/button_QLS_SUA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
-            android:layout_marginLeft="10dp"
+
             android:text="Sửa" />
         <Button
             android:id="@+id/button_QLS_Xoa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
-            android:layout_marginLeft="10dp"
             android:text="Xóa" />
 
 
     </LinearLayout>
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="horizontal">-->
-<!--        <Button-->
-<!--            android:id="@+id/button_QLS"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="6dp"-->
-<!--            android:layout_marginLeft="30dp"-->
-<!--            android:text="Danh Sách QL Sách"/>-->
-<!--    </LinearLayout>-->
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

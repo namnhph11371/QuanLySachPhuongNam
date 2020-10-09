@@ -24,8 +24,6 @@ public class QLS_DAO {
         contentValues.put("MaSach",sach.getMaSach());
         contentValues.put("MaTheLoai",sach.getMaTheLoai());
         contentValues.put("TenSach",sach.getTenSach());
-        contentValues.put("GiaNhap",sach.getGiaNhap());
-        contentValues.put("TieuDe",sach.getTieuDe());
         contentValues.put("TacGia",sach.getTacGia());
         contentValues.put("NhaXuatBan",sach.getNhaXuatban());
         contentValues.put("GiaBan",sach.getGiaBan());
@@ -39,8 +37,6 @@ public class QLS_DAO {
         contentValues.put("MaSach",sach.getMaSach());
         contentValues.put("MaTheLoai",sach.getMaTheLoai());
         contentValues.put("TenSach",sach.getTenSach());
-        contentValues.put("GiaNhap",sach.getGiaNhap());
-        contentValues.put("TieuDe",sach.getTieuDe());
         contentValues.put("TacGia",sach.getTacGia());
         contentValues.put("NhaXuatBan",sach.getNhaXuatban());
         contentValues.put("GiaBan",sach.getGiaBan());
@@ -57,16 +53,14 @@ public class QLS_DAO {
     // hàm lấy danh sách
     public List<Sach> getAll_QLS(){
        List<Sach> sachList = new ArrayList<>();
-        String TruyVan_Sach = "SELECT * FROM SACH";
+        String TruyVan_Sach = "SELECT * FROM QLS";
         Cursor cursor = mySqlite.getWritableDatabase().rawQuery(TruyVan_Sach,null);
         if (cursor.getCount()>0){
             cursor.moveToFirst();
-            while (cursor.isAfterLast()==false){
+            while (!cursor.isAfterLast()==false){
                 String MaSach = cursor.getString(cursor.getColumnIndex("MaSach"));
                 String MaTheLoai = cursor.getString(cursor.getColumnIndex("MaTheLoai"));
                 String TenSach = cursor.getString(cursor.getColumnIndex("TenSach"));
-                String  GiaNhap = cursor.getString(cursor.getColumnIndex("GiaNhap"));
-                String TieuDe = cursor.getString(cursor.getColumnIndex("TieuDe"));
                 String TacGia = cursor.getString(cursor.getColumnIndex("TacGia"));
                 String NhaXuatBan = cursor.getString(cursor.getColumnIndex("NhaXuatBan"));
                 String GiaBan = cursor.getString(cursor.getColumnIndex("GiaBan"));
@@ -75,8 +69,6 @@ public class QLS_DAO {
                 sach.setMaSach(MaSach);
                 sach.setMaTheLoai(MaTheLoai);
                 sach.setTenSach(TenSach);
-                sach.setGiaNhap(Float.parseFloat(GiaNhap));
-                sach.setTieuDe(TieuDe);
                 sach.setTacGia(TacGia);
                 sach.setNhaXuatban(NhaXuatBan);
                 sach.setGiaBan(Float.parseFloat(GiaBan));

@@ -5,18 +5,15 @@ import android.graphics.Bitmap;
 public class NguoiDung {
     private String UserName,PassWord,HoTen;
     private  String SoDienThoai;
-    private  Bitmap images;
 
-    public NguoiDung(String userName, String passWord, String hoTen, String soDienThoai, Bitmap images) {
+    public NguoiDung() {
+    }
+
+    public NguoiDung(String userName, String passWord, String hoTen, String soDienThoai) {
         UserName = userName;
         PassWord = passWord;
         HoTen = hoTen;
         SoDienThoai = soDienThoai;
-        this.images = images;
-    }
-
-    public NguoiDung() {
-        
     }
 
     public String getUserName() {
@@ -49,13 +46,5 @@ public class NguoiDung {
 
     public void setSoDienThoai(String soDienThoai) {
         SoDienThoai = soDienThoai;
-    }
-
-    public Bitmap getImages() {
-        return images;
-    }
-
-    public void setImages(Bitmap images) {
-        this.images = images;
     }
 }
